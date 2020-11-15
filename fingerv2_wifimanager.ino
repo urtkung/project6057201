@@ -34,7 +34,7 @@ const char *password = "00000000";
 const char* device_token  = "78bcc16e";
 //************************************************************************
 String getData, Link;
-String URL = "http://191.96.37.192/getdata.php"; //computer IP or the server domain
+String URL = "http://150.95.88.240/getdata.php"; //computer IP or the server domain
 //************************************************************************
 int FingerID = 0, t1, t2;                                  // The Fingerprint ID from the scanner 
 bool device_Mode = false;                           // Default Mode Enrollment
