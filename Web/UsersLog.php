@@ -150,30 +150,7 @@
                       ?>
                     </select>
                   </div>
-                  <div class="col-lg-4 col-sm-12">
-                    <label for="Event"><b>แยกตามกิจกรรม:</b></label>
-                    <select class="devn_sel" name="devn_sel" id="devn_sel">
-                      <option value="0">เลือกทั้งหมด</option>
-					   <?php
-                        require'connectDB.php';
-                        $sql = "SELECT DISTINCT device_dep FROM users_logs";
-                        $result = mysqli_stmt_init($conn);
-                        if (!mysqli_stmt_prepare($result, $sql)) {
-                            echo '<p class="error">SQL Error</p>';
-                        } 
-                        else{
-                            mysqli_stmt_execute($result);
-                            $resultl = mysqli_stmt_get_result($result);
-                            while ($row = mysqli_fetch_assoc($resultl)){
-                      ?>
-                              <option value="<?php echo $row['device_dep'];?>"><?php echo $row['device_dep'];?></option>
-                     
-                      <?php
-                            }
-                        }
-                      ?>
-                    </select>
-                  </div>
+                  
 					
                   <div class="col-lg-4 col-sm-12">
                     <label for="Fingerprint"><b>Export to Excel:</b></label>
