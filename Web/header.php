@@ -60,6 +60,7 @@
 	<a href="index.php">รายชื่อ</a>
     <a href="ManageUsers.php">เพิ่ม/ลบผู้ใช้</a>
     <a href="UsersLog.php">ประวัติ</a>
+	<a href="event.php">รายงานการเข้าร่วม</a>
     <a href="devices.php">อุปกรณ์/กิจกรรม</a>
 	
     <?php  
