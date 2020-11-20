@@ -37,7 +37,11 @@ if (isset($_SESSION['Admin-name'])) {
 <section>
   <div class="slideInDown animated">
     <div class="login-page">
+		
       <div class="form">
+		  	<div id="img_container">
+      			<img src="bg/LOGO.png" />
+    		</div>
         <?php  
           if (isset($_GET['error'])) {
             if ($_GET['error'] == "invalidEmail") {

@@ -5,10 +5,8 @@ session_start();
   <table class="table">
     <thead class="table-primary">
       <tr>
-
         <th>ชื่อ</th>
         <th>รหัสนักศึกษา</th>
-        <th>รหัสลายนิ้วมือ</th>
         <th>กิจกรรม</th>
         <th>วันที่</th>
         <th>เวลาเข้า</th>
@@ -83,11 +81,7 @@ session_start();
               $Finger_sel = $_POST['fing_sel'];
               $_SESSION['searchQuery'] .= " AND serialnumber='".$Finger_sel."'";
 		  }
-		  //Event filter			  
-          if ($_POST['devn_sel'] != 0) {
-              $devn_sel = $_POST['devn_sel'];
-              $_SESSION['searchQuery'] .= " AND device_dep='".$devn_sel."'";
-		  }
+		 
 
           //Department filter
           if ($_POST['dev_id'] != 0) {
@@ -116,7 +110,7 @@ session_start();
         }
         // echo $_SESSION['searchQuery'];
         // $sql = "SELECT * FROM users_logs WHERE checkindate=? AND pic_date BETWEEN ? AND ? ORDER BY id ASC";
-        $sql = "SELECT * FROM users_logs WHERE ".$_SESSION['searchQuery']." ORDER BY id DESC";
+        $sql = "SELECT * FROM users_logs WHERE ".$_SESSION['searchQuery']." ORDER BY timein DESC";
         $result = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($result, $sql)) {
             echo '<p class="error">SQL Error</p>';
@@ -132,7 +126,6 @@ session_start();
                   <TR>              
                   <TD><?php echo $row['username'];?></TD>
                   <TD><?php echo $row['serialnumber'];?></TD>
-                  <TD><?php echo $row['fingerprint_id'];?></TD>
                   <TD><?php echo $row['device_dep'];?></TD>
                   <TD><?php echo $row['checkindate'];?></TD>
                   <TD><?php echo $row['timein'];?></TD>
