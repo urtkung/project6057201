@@ -3,7 +3,7 @@
 #include <SoftwareSerial.h>
 #include <ESP8266HTTPClient.h>
 #include <SimpleTimer.h>           //https://github.com/jfturcot/SimpleTimer
-//wifi manager
+//wifi manager สำหรับการตั้งค่าการเชื่อมต่อผ่าน esp wifi
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>         //https://github.com/tzapu/WiFiManager
@@ -31,10 +31,10 @@ Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
 /* wifi & token from web */
 const char *ssid = "DM";
 const char *password = "00000000";
-const char* device_token  = "78bcc16e";
+const char* device_token  = "78bcc16e"; //token ที่ได้จากเว็บ
 //************************************************************************
 String getData, Link;
-String URL = "http://150.95.88.240/getdata.php"; //computer IP or the server domain
+String URL = "http://150.95.88.240/getdata.php"; // ip ของเว็บ หรือโดเมนเนมของเว็บ
 //************************************************************************
 int FingerID = 0, t1, t2;                                  // The Fingerprint ID from the scanner 
 bool device_Mode = false;                           // Default Mode Enrollment
@@ -44,6 +44,7 @@ unsigned long previousMillis = 0;
 
 
 //*************************Biometric Icons*********************************
+//โลโก้ที่จะแสดงบนจอ mornitor OLED
 const unsigned char myBitmap [] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
