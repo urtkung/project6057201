@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `checktechno_db`
+-- Database: `newtable64`
 --
 
 -- --------------------------------------------------------
@@ -34,13 +34,6 @@ CREATE TABLE `admin` (
   `admin_pwd` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `admin_name`, `admin_email`, `admin_pwd`) VALUES
-(1, 'Admin', 'admin@gmail.com', '$2y$10$89uX3LBy4mlU/DcBveQ1l.32nSianDP/E1MfUh.Z.6B4Z0ql3y7PK'),
-(2, 'test', 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6');
 
 -- --------------------------------------------------------
 
@@ -57,12 +50,6 @@ CREATE TABLE `devices` (
   `device_mode` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `devices`
---
-
-INSERT INTO `devices` (`id`, `device_name`, `device_dep`, `device_uid`, `device_date`, `device_mode`) VALUES
-(2, 'TechnoComScanner01', 'สอบจบ(ช่วงบ่าย2)', '78bcc16e', '2020-10-04', 1);
 
 -- --------------------------------------------------------
 
@@ -76,12 +63,6 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `event`
---
-
-INSERT INTO `event` (`event_id`, `event_name`) VALUES
-(1, 'eventnametest01'),
-(2, 'Susd');
 
 -- --------------------------------------------------------
 
@@ -118,16 +99,6 @@ CREATE TABLE `users` (
   `add_fingerid` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `serialnumber`, `gender`, `email`, `fingerprint_id`, `fingerprint_select`, `user_date`, `device_uid`, `device_dep`, `del_fingerid`, `add_fingerid`) VALUES
-(1, 'Auttawit', 605720102, 'Male', 'None', 1, 0, '2020-11-11', '78bcc16e', 'testเย็น', 0, 0),
-(2, 'ajjoke', 6000000, 'Male', 'None', 2, 0, '2020-11-11', '78bcc16e', 'สอบจบ(ช่วงบ่าย)', 0, 0),
-(3, 'ajjoke02', 60000003, 'Male', 'None', 3, 0, '2020-11-11', '78bcc16e', 'สอบจบ(ช่วงบ่าย)', 0, 0);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users_logs`
@@ -147,23 +118,7 @@ CREATE TABLE `users_logs` (
   `event` char(255) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Dumping data for table `users_logs`
---
 
-INSERT INTO `users_logs` (`id`, `username`, `serialnumber`, `fingerprint_id`, `device_uid`, `device_dep`, `checkindate`, `timein`, `timeout`, `fingerout`, `event`) VALUES
-(1, 'Auttawit', 605720102, 1, '78bcc16e', 'สอบจบ(ช่วงเช้า)', '2020-11-11', '08:32:47', '08:32:53', 1, NULL),
-(2, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย)', '2020-11-11', '13:50:20', '13:50:41', 1, NULL),
-(3, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย)', '2020-11-11', '13:50:44', '13:51:33', 1, NULL),
-(4, 'ajjoke02', 60000003, 3, '78bcc16e', 'สอบจบ(ช่วงบ่าย)', '2020-11-11', '13:51:10', '13:51:23', 1, NULL),
-(5, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย)', '2020-11-11', '13:51:51', '13:52:01', 1, NULL),
-(6, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย)', '2020-11-11', '13:52:14', '13:52:31', 1, NULL),
-(7, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย2)', '2020-11-11', '13:53:50', '13:54:02', 1, NULL),
-(8, 'ajjoke', 6000000, 2, '78bcc16e', 'สอบจบ(ช่วงบ่าย2)', '2020-11-11', '13:59:29', '00:00:00', 0, NULL);
-
---
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `admin`
